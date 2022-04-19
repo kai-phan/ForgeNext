@@ -11,6 +11,13 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+#forgeViewer {
+  .adsk-viewing-viewer {
+    height: calc(100vh - 120px) !important;
+    position: relative;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
