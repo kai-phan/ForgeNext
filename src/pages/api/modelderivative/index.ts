@@ -29,7 +29,7 @@ const handler: NextApiHandler = async (req, res) => {
 
     res.status(200).send(format);
   } catch (err) {
-    res.status(500).send({});
+    res.status(500).send(data);
   }
 };
 
