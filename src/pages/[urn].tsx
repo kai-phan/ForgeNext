@@ -19,10 +19,8 @@ const Detail = ({ urn, access_token }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="container">
-          <Header />
-          <ViewerV2 token={access_token} urn={urn} />
-        </div>
+        <Header />
+        <ViewerV2 token={access_token} urn={urn} />
       </main>
     </div>
   );

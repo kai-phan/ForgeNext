@@ -14,6 +14,7 @@ export type Data = {
 const Sider: React.FC<Props> = ({ data = [], onClick }) => {
   return (
     <aside>
+      <h5 className="text-muted mb-2">Model List</h5>
       <div className="row">
         {data.map(({ urn, thumbnail }) => (
           <div className="col-6 col-lg-3" key={urn}>

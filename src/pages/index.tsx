@@ -4,6 +4,7 @@ import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import Header from 'src/components/Header';
 import Sider, { Data } from 'src/components/Sider';
+import Footer from 'src/components/Footer';
 
 type Props = {
   data: Data[];
@@ -18,10 +19,11 @@ export default function Home({ data }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="container">
-          <Header />
+        <Header />
+        <div className="container my-5">
           <Sider data={data} />
         </div>
+        <Footer />
       </main>
     </div>
   );
