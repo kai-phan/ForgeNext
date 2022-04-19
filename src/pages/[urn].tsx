@@ -44,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const {
     data: { access_token },
-  } = await axios.get(`${process.env.VERCEL_URL}/api/auth`);
+  } = await axios.get(`${process.env.DOMAIN}/api/auth`);
 
   return {
     props: {

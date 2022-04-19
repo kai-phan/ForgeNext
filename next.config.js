@@ -2,6 +2,9 @@
 const path = require('path');
 
 const nextConfig = {
+  env: {
+    DOMAIN: process.env.VERCEL_URL || 'http://localhost:3000',
+  },
   reactStrictMode: true,
   webpack(config) {
     config.resolve.alias = {
