@@ -30,9 +30,11 @@ export default function Home({ data }: Props) {
 export const getStaticProps: GetStaticProps = async (context) => {
   const {
     data: { access_token },
-  } = await axios.get(`${process.env.DOMAIN}/api/auth`);
+  } = await axios.get(`${process.env.VERCEL_URL}/api/auth`);
 
-  const { data } = await axios.get(`${process.env.DOMAIN}/api/modelderivative`);
+  const { data } = await axios.get(
+    `${process.env.VERCEL_URL}/api/modelderivative`,
+  );
 
   return {
     props: {
