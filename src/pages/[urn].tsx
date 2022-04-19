@@ -1,6 +1,6 @@
 import React from 'react';
 import ViewerV2 from 'src/components/ViewerV2';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import Head from 'next/head';
 import Header from 'src/components/Header';
@@ -28,23 +28,7 @@ const Detail = ({ urn, access_token }: Props) => {
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const {
-    data: { access_token },
-  } = await axios.get(`${process.env.DOMAIN}/api/auth`);
-
-  const { data = [] } = await axios.post(
-    `${process.env.DOMAIN}/api/modelderivative`,
-    { access_token },
-  );
-
-  return {
-    paths: data.map((d: any) => ({ params: { urn: d.urn } })),
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const {
     data: { access_token },
   } = await axios.get(`${process.env.DOMAIN}/api/auth`);

@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import Header from 'src/components/Header';
 import Sider, { Data } from 'src/components/Sider';
@@ -27,7 +27,7 @@ export default function Home({ data }: Props) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const {
     data: { access_token },
   } = await axios.get(`${process.env.DOMAIN}/api/auth`);
