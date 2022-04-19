@@ -29,11 +29,14 @@ const Detail = ({ urn, access_token }: Props) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // const {
-  //   data: { access_token },
-  // } = await axios.get(`${process.env.DOMAIN}/api/auth`);
+  const {
+    data: { access_token },
+  } = await axios.get(`${process.env.DOMAIN}/api/auth`);
 
-  const { data } = await axios.get(`${process.env.DOMAIN}/api/modelderivative`);
+  const { data = [] } = await axios.post(
+    `${process.env.DOMAIN}/api/modelderivative`,
+    { access_token },
+  );
 
   return {
     paths: data.map((d: any) => ({ params: { urn: d.urn } })),
