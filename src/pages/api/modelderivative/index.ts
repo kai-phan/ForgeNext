@@ -3,12 +3,6 @@ import { ModelDerivativeClient } from 'forge-server-utils';
 
 const data = [
   {
-    urn: 'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cXV5XzEyMDk5My9yYWNfYmFzaWNfc2FtcGxlX3Byb2plY3QucnZ0',
-  },
-  {
-    urn: 'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cXV5XzEyMDk5My9ib3guaXB0',
-  },
-  {
     urn: 'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cXV5XzEyMDk5My9hcGFydG1lbnQucnZ0',
   },
   {
