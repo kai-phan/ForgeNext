@@ -34,7 +34,28 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     data: { access_token },
   } = await axios.get(`${process.env.DOMAIN}/api/auth`);
 
-  const { data } = await axios.get(`${process.env.DOMAIN}/api/modelderivative`);
+  const data = [
+    {
+      urn: 'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cXV5XzEyMDk5My9hcGFydG1lbnQucnZ0',
+      thumbnail: './thumbnail/building_1.png',
+    },
+    {
+      urn: 'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cXV5XzEyMDk5My9mMjIuaXB0',
+      thumbnail: './thumbnail/f22.png',
+    },
+    {
+      urn: 'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cXV5XzEyMDk5My9UYW5xdWUuaXB0',
+      thumbnail: './thumbnail/box.png',
+    },
+    {
+      urn: 'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cXV5XzEyMDk5My9BcmMtMDctMDEtOTkucnZ0',
+      thumbnail: './thumbnail/building_2.png',
+    },
+    {
+      urn: 'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cXV5XzEyMDk5My9FbGVjdHJpY2FsLnJ2dA',
+      thumbnail: './thumbnail/mep.png',
+    },
+  ];
 
   return {
     props: {
